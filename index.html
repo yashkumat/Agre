@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style3.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- <script src="./assets/ol/ol.js"></script> -->
+    <script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
+    <!-- Geocoder JS -->
+    <link href="https://cdn.jsdelivr.net/npm/ol-geocoder@latest/dist/ol-geocoder.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/ol-geocoder"></script>
+<!-- Geocoder CSS -->
+<link href="https://unpkg.com/ol-geocoder/dist/ol-geocoder.min.css" rel="stylesheet">
+<script src="https://unpkg.com/ol-geocoder"></script>
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
+    <!-- Proj4js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.4/proj4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3>Layer list</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li class="active">
+                    <a href="#flood_risk_rivers_and_sea_for_planning" data-toggle="collapse" aria-expanded="true"
+                        class="dropdown-toggle">
+                        <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                            data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                            data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                            </path>
+                        </svg><!-- <i class="fas fa-home"></i> -->
+                        FLOOD RISK RIVERS AND <br> SEA FOR PLANNING
+                    </a>
+                    <ul class="list-unstyled collapse show" id="flood_risk_rivers_and_sea_for_planning" style="">
+                        <li>
+                            <a href="#flood_risk_rivers_and_sea" data-toggle="collapse" aria-expanded="true"
+                                class="dropdown-toggle">
+                                <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                                    data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-home"></i> -->
+                                Flood Risk Rivers and Sea
+                            </a>
+                            <ul class="list-unstyled collapse show" id="flood_risk_rivers_and_sea" style="">
+                                <li>
+                                    <a>
+                                        <div class="newLayer custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Flood_Map_for_Planning_Rivers_and_Sea_Flood_Zone_2"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Flood_Map_for_Planning_Rivers_and_Sea_Flood_Zone_2">Flood Zone 2
+                                                <br><small>Medium Probability of flooding. You must carry out a flood
+                                                    risk assessment for development in flood zone 2</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Flood_Map_for_Planning_Rivers_and_Sea_Flood_Zone_3"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Flood_Map_for_Planning_Rivers_and_Sea_Flood_Zone_3">Flood Zone 3
+                                                <br><small>High Probability of flooding. You must carry out a flood risk
+                                                    assessment for development in flood zone 3 </small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Flood_Map_for_Planning_Rivers_and_Sea_Flood_Storage_Areas"
+                                        onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Flood_Map_for_Planning_Rivers_and_Sea_Flood_Storage_Areas">Flood Storage
+                                        Areas <br><small>These areas act as a balancing reservoir, storage basin or
+                                            balancing pond. If you development is within this area you need a flood risk
+                                            assessment and provide flood compesation volumes</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Flood_Map_for_Planning_Rivers_and_Sea_Areas_Benefiting_from_Defences"
+                                        onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Flood_Map_for_Planning_Rivers_and_Sea_Areas_Benefiting_from_Defences">Areas
+                                        Benefiting from Defences <br><small>It shows partial location and benefits of
+                                            flood defences. You may need a flood risk assessment to understand the risk
+                                            of water overtopping these defence</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Flood_Map_for_Planning_Rivers_and_Sea_Spatial_Flood_Defences_Without_Standardised_Attributes"
+                                        onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Flood_Map_for_Planning_Rivers_and_Sea_Spatial_Flood_Defences_Without_Standardised_Attributes">Spatial
+                                        Flood Defences<br><small>It shows defences which have a standard of protection
+                                            equal to or better than 1 in 100 (1%) for rivers and 1 in 200 (0.5%) from
+                                            the sea</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="Historic_Flood_Map"
+                                        onchange="layerdisplay(this)">
+                                    <label class="custom-control-label" for="Historic_Flood_Map">Historic
+                                        Flooding<br><small>It shows to the land of historic flood but it does not
+                                            necessarily indicate that properties were flooded internally</small></label>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#flooding_risk_groundwater" data-toggle="collapse" aria-expanded="true"
+                        class="dropdown-toggle">
+                        <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                            data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                            data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                            </path>
+                        </svg><!-- <i class="fas fa-home"></i> -->
+                        FLOODING RISK <br> GROUNDWATER
+                    </a>
+                    <ul class="list-unstyled collapse show" id="flooding_risk_groundwater" style="">
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Groundwater_Flooding_Scoping_Study_Data" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Groundwater_Flooding_Scoping_Study_Data">Groundwater Emergence<br><small>It
+                                            shows the Groundwater Scoping report part 1 & 2</small></label>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#flooding_risk_surfacewater" data-toggle="collapse" aria-expanded="true"
+                        class="dropdown-toggle">
+                        <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                            data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                            data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                            </path>
+                        </svg><!-- <i class="fas fa-home"></i> -->
+                        FLOODING RISK <br> SURFACE WATER
+                    </a>
+                    <ul class="list-unstyled collapse show" id="flooding_risk_surfacewater" style="">
+                        <li>
+                            <a href="#flood_risk_surfacewater_extent" data-toggle="collapse" aria-expanded="true"
+                                class="dropdown-toggle">
+                                <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                                    data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-home"></i> -->
+                                Extent
+                            </a>
+                            <ul class="list-unstyled collapse show" id="flood_risk_surfacewater_extent" style="">
+                                <li>
+                                    <a>
+                                        <div class="newLayer custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Extent_3_3_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Extent_3_3_Percent_Annual_Chance">High:
+                                                greater than 1 in 30<br><small>High risk means that each year this area
+                                                    has a chance of flooding of greater than 3.3%. It is indicative and
+                                                    unsuitable for identifying whether an individual property will flood
+                                                    unless agreed with your local Lead Local Flood
+                                                    Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Extent_1_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Extent_1_Percent_Annual_Chance">Medium:
+                                                1 in 30 to 1 in 100 <br><small>Medium risk means that each year this
+                                                    area has a chance of flooding of between 1% and 3.3%. It is
+                                                    indicative and unsuitable for identifying whether an individual
+                                                    property will flood unless agreed with your local Lead Local Flood
+                                                    Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="newLayer custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Extent_0_1_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Extent_0_1_Percent_Annual_Chance">Low:
+                                                1 in 100 to 1 in 1,000<br><small>Low risk means that each year this area
+                                                    has a chance of flooding of between 0.1% and 1%. It is indicative
+                                                    and unsuitable for identifying whether an individual property will
+                                                    flood unless agreed with your local Lead Local Flood
+                                                    Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="custom-control custom-switch">
+                                            <!-- <input type="checkbox" class="custom-control-input" id="no_layer" onchange="layerdisplay(this)"> -->
+                                            <label class="" for="no_layer">Very Low: less than 1 in 1,000
+                                                <br><small>Very low risk means that each year this area has a chance of
+                                                    flooding of less than 0.1%. It is indicative and unsuitable for
+                                                    identifying whether an individual property will flood unless agreed
+                                                    with your local Lead Local Flood Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#flood_risk_surfacewater_depth" data-toggle="collapse" aria-expanded="true"
+                                class="dropdown-toggle">
+                                <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                                    data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-home"></i> -->
+                                Depth
+                            </a>
+                            <ul class="list-unstyled collapse show" id="flood_risk_surfacewater_depth" style="">
+                                <li>
+                                    <a>
+                                        <div class="newLayer custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Depth_3_3_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Depth_3_3_Percent_Annual_Chance">High:
+                                                Over 900mm<br><small>High flood impact. It is indicative and unsuitable
+                                                    for identifying whether an individual property will flood unless
+                                                    agreed with your local Lead Local Flood Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Depth_1_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Depth_1_Percent_Annual_Chance">Medium:
+                                                900mm to 300mm <br><small>Medium flood impact. It is indicative and
+                                                    unsuitable for identifying whether an individual property will flood
+                                                    unless agreed with your local Lead Local Flood
+                                                    Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="newLayer custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Depth_0_1_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Depth_0_1_Percent_Annual_Chance">Low:
+                                                Below 300<br><small>Low flood impact. It is indicative and unsuitable
+                                                    for identifying whether an individual property will flood unless
+                                                    agreed with your local Lead Local Flood Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#flood_risk_surfacewater_hazard" data-toggle="collapse" aria-expanded="true"
+                                class="dropdown-toggle">
+                                <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                                    data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-home"></i> -->
+                                Hazard
+                            </a>
+                            <ul class="list-unstyled collapse show" id="flood_risk_surfacewater_hazard" style="">
+                                <li>
+                                    <a>
+                                        <div class="newLayer custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Hazard_3_3_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Hazard_3_3_Percent_Annual_Chance">More
+                                                than 2.0<br><small>Danger for all including the emergency services. It
+                                                    is indicative and unsuitable for identifying whether an individual
+                                                    property will flood unless agreed with your local Lead Local Flood
+                                                    Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Hazard_1_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Hazard_1_Percent_Annual_Chance">1.25
+                                                to 2.0<br><small>Danger for most inlcuding general public. It is
+                                                    indicative and unsuitable for identifying whether an individual
+                                                    property will flood unless agreed with your local Lead Local Flood
+                                                    Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="newLayer custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Hazard_0_1_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Hazard_0_1_Percent_Annual_Chance">0.75
+                                                to 1.25<br><small>Danger for some including children, the elderly and
+                                                    the infirm. It is indicative and unsuitable for identifying whether
+                                                    an individual property will flood unless agreed with your local Lead
+                                                    Local Flood Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="custom-control custom-switch">
+                                            <!-- <input type="checkbox" class="custom-control-input" id="no_layer" onchange="layerdisplay(this)"> -->
+                                            <label class="" for="no_layer">Less than 0.75<br><small>Very low hazard -
+                                                    Caution. It is indicative and unsuitable for identifying whether an
+                                                    individual property will flood unless agreed with your local Lead
+                                                    Local Flood Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#flood_risk_surfacewater_velocity" data-toggle="collapse" aria-expanded="true"
+                                class="dropdown-toggle">
+                                <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                                    data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-home"></i> -->
+                                Velocity
+                            </a>
+                            <ul class="list-unstyled collapse show" id="flood_risk_surfacewater_velocity" style="">
+                                <li>
+                                    <a>
+                                        <div class="newLayer custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Speed_3_3_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Speed_3_3_Percent_Annual_Chance">Speed
+                                                storm greater than 1 in 30<br><small>Maximum speed of flood flow that
+                                                    could result from a flood with a 3.3% chance of happening in any
+                                                    given year</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Speed_1_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Speed_1_Percent_Annual_Chance">Speed
+                                                storm btw 1 in 30 and 1 in 100<br><small>Maximum speed of flood flow
+                                                    that could result from a flood with a 1% to 3.3% chance of happening
+                                                    in any given year</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="newLayer custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input"
+                                                id="Risk_of_Flooding_from_Surface_Water_Speed_0_1_Percent_Annual_Chance"
+                                                onchange="layerdisplay(this)">
+                                            <label class="custom-control-label"
+                                                for="Risk_of_Flooding_from_Surface_Water_Speed_0_1_Percent_Annual_Chance">Speed
+                                                storm btw 1 in 100 to 1 in 1,000<br><small>Maximum speed of flood flow
+                                                    that could result from a flood with a 0.1% to 1% chance of happening
+                                                    in any given year</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="custom-control custom-switch">
+                                            <!-- <input type="checkbox" class="custom-control-input" id="no_layer" onchange="layerdisplay(this)"> -->
+                                            <label class="" for="no_layer">Less than 0.75<br><small>Very low hazard -
+                                                    Caution. It is indicative and unsuitable for identifying whether an
+                                                    individual property will flood unless agreed with your local Lead
+                                                    Local Flood Authority</small></label>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#flooding_risk_reservior" data-toggle="collapse" aria-expanded="true"
+                        class="dropdown-toggle">
+                        <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                            data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                            data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                            </path>
+                        </svg><!-- <i class="fas fa-home"></i> -->
+                        FLOODING RISK <br> RESERVOIRS
+                    </a>
+                    <ul class="list-unstyled collapse show" id="flooding_risk_reservior" style="">
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Extent_Web_Mapping_Service" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Extent_Web_Mapping_Service">Extent<br><small>This is the simplified version of the outline Reservoir Flood Map as shown on the Environment Agency website. It shows the largest area that might be flooded if a reservoir were to fail. Since this is a prediction of a credible worst case scenario, it’s unlikely that any actual flood would be this large. These data are intended for emergency planning only and are not reliable for large scale flood risk assessments</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Speed_Web_Mapping_Service" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Speed_Web_Mapping_Service">Velocity<br><small>This is the simplified version of the outline Reservoir Flood Map as shown on the Environment Agency website. It shows the largest area that might be flooded if a reservoir were to fail. Since this is a prediction of a credible worst case scenario, it’s unlikely that any actual velocity would be this large. These data are intended for emergency planning only and are not reliable for large scale flood risk assessments</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Depth_Web_Mapping_Service" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Depth_Web_Mapping_Service">Depth<br><small>This is the simplified version of the outline Reservoir Flood Map as shown on the Environment Agency website. It shows the largest area that might be flooded if a reservoir were to fail. Since this is a prediction of a credible worst case scenario, it’s unlikely that any actual flood depth would be this large. These data are intended for emergency planning only and are not reliable for large scale flood risk assessments</small></label>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#flooding_risk_critical_drainage_area" data-toggle="collapse" aria-expanded="true"
+                        class="dropdown-toggle">
+                        <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                            data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                            data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                            </path>
+                        </svg><!-- <i class="fas fa-home"></i> -->
+                        FLOODING RISK <br> CRITICAL DRAINAGE  <br> AREAS
+                    </a>
+                    <ul class="list-unstyled collapse show" id="flooding_risk_critical_drainage_area" style="">
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Areas_with_Critical_Drainage_Problems" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Areas_with_Critical_Drainage_Problems">Critical Drainage Areas<br><small>You will need a flood risk assessment if you development is in flood zone 1 and within a critical drainage area. This layer displays the geographical coverage of  Areas with Critical Drainage Problems (ACDPs) across England</small></label>
+                                </div>
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </li>
+                <li>
+                    <a href="#flooding_risk_indicative_flood_risk_areas" data-toggle="collapse" aria-expanded="true"
+                        class="dropdown-toggle">
+                        <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" data-prefix="fas"
+                            data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                            data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z">
+                            </path>
+                        </svg><!-- <i class="fas fa-home"></i> -->
+                        FLOODING RISK <br>  INDICATIVE FLOOD  <br> RISK AREAS
+                    </a>
+                    <ul class="list-unstyled collapse show" id="flooding_risk_indicative_flood_risk_areas" style="">
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Flood_Risk_Areas" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Flood_Risk_Areas">Flood Risk Areas<br><small>Flood Risk Areas identify locations where there is believed to be significant flood risk. Flood Risk Areas have been defined by the Environment Agency (main rivers and the sea) and Lead Local Flood Authorities (surface water). Flood Risk Areas determine where Flood Hazard and Risk Maps and Flood Risk Management Plans must subsequently be produced</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Indicative_Flood_Risk_Areas_Clusters" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Indicative_Flood_Risk_Areas_Clusters">Risk areas clusters<br><small>Cluster Maps are aggregations of 3km by 3km squares that each contain at least 4 (in Wales) or 5 (in England) touching 'blue squares' (i.e. 1km grid squares where one of the thresholds above is exceeded)</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Indicative_Flood_Risk_Areas_Communities_at_Risk_Data" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Indicative_Flood_Risk_Areas_Communities_at_Risk_Data">Communities at Risk <br><small>This information is provided by the Environment Agency for use by LLFAs in their review during 2017 of Preliminary Flood Risk Assessments and Flood Risk Areas under the Flood Risk Areas. it must be used in conjunction with data for Indicative Flood Risk Areas generated by the Environment Agency using the cluster method as well</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Indicative_Flood_Risk_Areas_People_Sensitivity_Grid" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Indicative_Flood_Risk_Areas_People_Sensitivity_Grid">People sensitivy Grid<br><small>The Indicative Flood Risk Areas are primarily based on an aggregated 1km square grid Updated Flood Map for Surface Water (1 in 100 and 1000 annual probability rainfall), informally referred to as the “blue square map</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Indicative_Flood_Risk_Areas_People_Sensitivity_by_Llfa" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Indicative_Flood_Risk_Areas_People_Sensitivity_by_Llfa">People Sensitivity by LLFA<br><small>The Indicative Flood Risk Areas are primarily based on an aggregated 1km square grid Updated Flood Map for Surface Water (1 in 100 and 1000 annual probability rainfall), informally referred to as the “blue square map</small></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input"
+                                        id="Indicative_Flood_Risk_Areas_1km_Blue_Squares" onchange="layerdisplay(this)">
+                                    <label class="custom-control-label"
+                                        for="Indicative_Flood_Risk_Areas_1km_Blue_Squares">1km Blue Squares<br><small>The Indicative Flood Risk Areas are primarily based on an aggregated 1km square grid Updated Flood Map for Surface Water (1 in 100 and 1000 annual probability rainfall), informally referred to as the “blue square map</small></label>
+                                </div>
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </li>
+            </ul>
+            </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul> -->
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Layers</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#"><img src="./assets/images/RIDA.gif" style="width: 70px;" alt="" srcset="">></a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div id='map' class='map'></div>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js">
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+    <script src="./customs/js/map.js"></script>
+</body>
+
+</html>
