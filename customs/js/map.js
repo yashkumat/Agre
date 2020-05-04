@@ -25,7 +25,7 @@ var view = new ol.View({
 //Define basemap
 var OSMBaseMap = new ol.layer.Tile({
     source: new ol.source.XYZ({
-      url: 'https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXJnZXJpdiIsImEiOiJjazludXBxcGowMmc1M2ZuNndweXh6bXl5In0.6NJz4WYp0542hCoBwWHx6g'
+      url: 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXJnZXJpdiIsImEiOiJjazludXBxcGowMmc1M2ZuNndweXh6bXl5In0.6NJz4WYp0542hCoBwWHx6g'
     })
   })
 // River layer 
