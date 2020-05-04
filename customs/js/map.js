@@ -1,4 +1,11 @@
 
+// Turn on all tooptips
+$('.tooltipps').tooltip()
+$( document ).ready(function() {
+    $('#gcd-button-control').click()
+});
+
+
 // Defining custom control
 proj4.defs("EPSG:27700","+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs");
 
@@ -30,6 +37,14 @@ var riverWMS =  new ol.layer.Tile({
     name : 'Main River'
 })
 
+// var DrainageVec =  new ol.layer.Vector({
+//     source:new ol.source.Vector({
+//         format : new ol.format.GeoJSON(),
+//         url : './customs/js/drainage.geojson'
+//     }),
+//     name : 'drainage'
+// })
+
 
 // Define array of layers
 var layerArray = [OSMBaseMap,riverWMS]
@@ -41,10 +56,13 @@ var map = new ol.Map({
     layers:layerArray,
     view : view
 })
+
+
+
 var geocoder = new Geocoder('nominatim', {
     provider: 'osm',
     lang: 'en',
-    placeholder: 'Search for ...',
+    placeholder: 'Enter the Postal code',
     limit: 5,
     debug: false,
     autoComplete: true,
@@ -66,6 +84,27 @@ function layerdisplay(checkbox){
     var checked = checkbox.checked
 
     if (checked){
+        if (id == 'Areas_with_Critical_Drainage_Problems'){
+            var layer =   new ol.layer.Vector({
+                source:new ol.source.Vector({
+                    format : new ol.format.GeoJSON(),
+                    url : './customs/js/drainage.geojson'
+                }),
+                style :new ol.style.Style({
+                    stroke: new ol.style.Stroke({
+                      color: 'blue',
+                      lineDash: [4],
+                      width: 3
+                    }),
+                    fill: new ol.style.Fill({
+                      color: 'rgba(0, 0, 255, 0.1)'
+                    })
+                  }),
+                name : 'Areas_with_Critical_Drainage_Problems'
+            })
+            map.addLayer(layer)
+                   
+        } else {
         for(i=0;i<AllLayersInfo.length;i++){
             if(AllLayersInfo[i].layer){
                 if (AllLayersInfo[i].layer == id){
@@ -75,13 +114,14 @@ function layerdisplay(checkbox){
                             params:{'LAYERS': id, 'tiled':true}
                         }),
                         name : id,
-                        opacity:0.3
+                        opacity:0.5
                     })
                     map.addLayer(layer)
                     break
                 }
             }
         }
+    }
     }else {
         for (i=0;i<map.getLayers().a.length;i++){
             if (map.getLayers().a[i].getProperties().name == id){

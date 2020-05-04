@@ -10,13 +10,15 @@
             "layerName" : "Flood Zone 2",
             "Link": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-rivers-and-sea-flood-zone-2/wms",
             "layer":"Flood_Map_for_Planning_Rivers_and_Sea_Flood_Zone_2",
-            "Description": "Medium Probability of flooding. You must carry out a flood risk assessment for development in flood zone 2 "
-         },
+            "Description": "Medium Probability of flooding. You must carry out a flood risk assessment for development in flood zone 2 ",
+            "Color":"#ff0000"
+        },
         {
             "layerName" : "Flood Zone 3",
             "Link": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-rivers-and-sea-flood-zone-3/wms",
             "layer":"Flood_Map_for_Planning_Rivers_and_Sea_Flood_Zone_3",
-            "Description": "High Probability of flooding. You must carry out a flood risk assessment for development in flood zone 3 "
+            "Description": "High Probability of flooding. You must carry out a flood risk assessment for development in flood zone 3 ",
+            "Color":"#00ff00"
  	},
         {
             "layerName" : "Flood Storage Areas",
