@@ -88,7 +88,7 @@ function layerdisplay(checkbox){
             var layer =   new ol.layer.Vector({
                 source:new ol.source.Vector({
                     format : new ol.format.GeoJSON(),
-                    url : './customs/js/drainage.geojson'
+                    url : '/customs/js/drainage.geojson'
                 }),
                 style :new ol.style.Style({
                     stroke: new ol.style.Stroke({
@@ -131,3 +131,10 @@ function layerdisplay(checkbox){
         }
     }
 }
+
+
+// Close sidebar onn map click
+
+map.on('click', function(evt){
+    $('#sidebar').removeClass('active');
+})

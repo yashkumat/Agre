@@ -51,7 +51,7 @@ a:focus {
 ----------------------------------------------------- */
 
 #sidebar {
-    width: 250px;
+    width: 230px;
     position: fixed;
     top: 0;
     left: -250px;
@@ -196,7 +196,9 @@ a.article:hover {
 }
 
 
+ 
 .ol-control button { 
+    right: 10px;
     background-color: rgba(40, 40, 40, 0.8) !important;
 }
 .ol-control button:hover { 
@@ -211,13 +213,13 @@ a.article:hover {
 
 #Flood_Map_for_Planning_Rivers_and_Sea_Flood_Zone_2:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #64a082;
-    background-color: #64a082;
+    border-color: #D1F2EB;
+    background-color: #D1F2EB;
 }
 #Flood_Map_for_Planning_Rivers_and_Sea_Flood_Zone_3:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #6998a4;
-    background-color: #6998a4;
+    border-color: #AED6F1;
+    background-color: #AED6F1;
 }
 #Flood_Map_for_Planning_Rivers_and_Sea_Flood_Storage_Areas:checked~.custom-control-label::before{
     color: #fff;
@@ -233,62 +235,62 @@ a.article:hover {
     background-color: #8A2BE2;
 }#Historic_Flood_Map:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #FFFFFF;
-    background-color: #FFFFFF;
+    border-color: #0000FF;
+    background-color: #0000FF;
 }#Groundwater_Flooding_Scoping_Study_Data:checked~.custom-control-label::before{
     color: #fff;
     border-color: #3d468E;
     background-color: #3d468E;
 }#Risk_of_Flooding_from_Surface_Water_Extent_3_3_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #72798C;
-    background-color: #72798C;
+    border-color: #2E86C1;
+    background-color: #2E86C1;
 }#Risk_of_Flooding_from_Surface_Water_Extent_1_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #5F7374;
-    background-color: #5F7374;
+    border-color: #5DADE2;
+    background-color: #5DADE2;
 }#Risk_of_Flooding_from_Surface_Water_Extent_0_1_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #62886C;
-    background-color: #62886C;
+    border-color: #85C1E9;
+    background-color: #85C1E9;
 }#Risk_of_Flooding_from_Surface_Water_Depth_3_3_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #72798C;
-    background-color: #72798C;
+    border-color: #2E86C1;
+    background-color: #2E86C1;
 }#Risk_of_Flooding_from_Surface_Water_Depth_1_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #5F7374;
-    background-color: #5F7374;
+    border-color: #5DADE2;
+    background-color: #5DADE2;
 }#Risk_of_Flooding_from_Surface_Water_Depth_0_1_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #62886C;
-    background-color: #62886C;
+    border-color: #85C1E9;
+    background-color: #85C1E9;
 }#Risk_of_Flooding_from_Surface_Water_Hazard_3_3_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #72798C;
-    background-color: #72798C;
+    border-color: #2E86C1;
+    background-color: #2E86C1;
 }#Risk_of_Flooding_from_Surface_Water_Hazard_1_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #5F7374;
-    background-color: #5F7374;
+    border-color: #5DADE2;
+    background-color: #5DADE2;
 }#Risk_of_Flooding_from_Surface_Water_Hazard_0_1_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #62886C;
-    background-color: #62886C;
+    border-color: #85C1E9;
+    background-color: #85C1E9;
 }#Risk_of_Flooding_from_Surface_Water_Speed_3_3_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #72798C;
-    background-color: #72798C;
+    border-color: #2E86C1;
+    background-color: #2E86C1;
 }#Risk_of_Flooding_from_Surface_Water_Speed_1_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #5F7374;
-    background-color: #5F7374;
+    border-color: #5DADE2;
+    background-color: #5DADE2;
 }#Risk_of_Flooding_from_Surface_Water_Speed_0_1_Percent_Annual_Chance:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #62886C;
-    background-color: #62886C;
+    border-color: #2E86C1;
+    background-color: #2E86C1;
 }#Flood_Risk_Areas:checked~.custom-control-label::before{
     color: #fff;
-    border-color: #FFFFFF;
-    background-color: #FFFFFF;
+    border-color: #0000ff;
+    background-color: #0000ff;
 }
