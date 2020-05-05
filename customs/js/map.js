@@ -100,6 +100,7 @@ function layerdisplay(checkbox){
                       color: 'rgba(0, 0, 255, 0.1)'
                     })
                   }),
+                  renderType:'image',
                 name : 'Areas_with_Critical_Drainage_Problems'
             })
             map.addLayer(layer)
