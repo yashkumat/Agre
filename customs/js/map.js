@@ -88,7 +88,7 @@ function layerdisplay(checkbox){
             var layer =   new ol.layer.Vector({
                 source:new ol.source.Vector({
                     format : new ol.format.GeoJSON(),
-                    url : '/customs/js/drainage.geojson'
+                    url : 'drainage.geojson'
                 }),
                 style :new ol.style.Style({
                     stroke: new ol.style.Stroke({
