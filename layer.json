@@ -136,20 +136,20 @@
 	},
         {
             "layerName" : "Extent",
-            "Link": "https://environment.data.gov.uk/spatialdata/risk-of-flooding-from-reservoirs-maximum-flood-extent-web-mapping-service/wms",
-	    "layer":"Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Extent_Web_Mapping_Service",
+            "Link": "https://environment.data.gov.uk/spatialdata/risk-of-flooding-from-reservoirs-maximum-flood-extent/wms",
+	    "layer":"Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Extent",
             "Description": "This is the simplified version of the outline Reservoir Flood Map as shown on the Environment Agency website. It shows the largest area that might be flooded if a reservoir were to fail. Since this is a prediction of a credible worst case scenario, it’s unlikely that any actual flood would be this large. These data are intended for emergency planning only and are not reliable for large scale flood risk assessments"
 	},
         {
             "layerName" : "Velocity ",
-            "Link": "https://environment.data.gov.uk/spatialdata/risk-of-flooding-from-reservoirs-maximum-flood-speed-web-mapping-service/wms",
-	    "layer":"Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Speed_Web_Mapping_Service",
+            "Link": "https://environment.data.gov.uk/spatialdata/risk-of-flooding-from-reservoirs-maximum-flood-speed/wms",
+	    "layer":"Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Speed",
             "Description": "This is the simplified version of the outline Reservoir Flood Map as shown on the Environment Agency website. It shows the largest area that might be flooded if a reservoir were to fail. Since this is a prediction of a credible worst case scenario, it’s unlikely that any actual velocity would be this large. These data are intended for emergency planning only and are not reliable for large scale flood risk assessments" 
 	},
         {
             "layerName" : "Depth",
-            "Link": "https://environment.data.gov.uk/spatialdata/risk-of-flooding-from-reservoirs-maximum-flood-depth-web-mapping-service/wms",
-	    "layer":"Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Depth_Web_Mapping_Service",
+            "Link": "https://environment.data.gov.uk/spatialdata/risk-of-flooding-from-reservoirs-maximum-flood-depth/wms",
+	    "layer":"Risk_of_Flooding_from_Reservoirs_Maximum_Flood_Depth",
             "Description": "This is the simplified version of the outline Reservoir Flood Map as shown on the Environment Agency website. It shows the largest area that might be flooded if a reservoir were to fail. Since this is a prediction of a credible worst case scenario, it’s unlikely that any actual flood depth would be this large. These data are intended for emergency planning only and are not reliable for large scale flood risk assessments" 
 	},
         {

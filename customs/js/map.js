@@ -47,7 +47,7 @@ var riverWMS =  new ol.layer.Tile({
 
 
 // Define array of layers
-var layerArray = [OSMBaseMap,riverWMS]
+var layerArray = [OSMBaseMap]
 
 // Define our map
 var map = new ol.Map({
