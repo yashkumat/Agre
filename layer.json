@@ -29,7 +29,7 @@
         {
             "layerName" : "Areas Benefiting from Defences",
             "Link": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-rivers-and-sea-areas-benefiting-from-defences/wms",
-            "layer":"Flood_Map_for_Planning_Rivers_and_Sea_Areas_Benefiting_from_Defences",
+            "layer":"Flood_Map_for_Planning_Rivers_and_Sea_Areas_Benefiting_from_Flood_Defences",
             "Description": "It shows partial location and benefits of flood defences. You may need a flood risk assessment to understand the risk of water overtopping these defence" 
 	},
         {
@@ -166,8 +166,8 @@
 },
         {
             "layerName" : "Risk areas cluster",
-            "Link": "https://environment.data.gov.uk/spatialdata/indicative-flood-risk-areas-clusters/wms",
-	    "layer":"Indicative_Flood_Risk_Areas_Clusters",
+            "Link": "https://environment.data.gov.uk/spatialdata/cluster-map/wms",
+	    "layer":"Cluster_Maps",
             "Description": "Cluster Maps are aggregations of 3km by 3km squares that each contain at least 4 (in Wales) or 5 (in England) touching 'blue squares' (i.e. 1km grid squares where one of the thresholds above is exceeded)" 
 	},
         {
@@ -178,14 +178,14 @@
 	},
         {
             "layerName" : "People sensitivy Grid",
-            "Link": "https://environment.data.gov.uk/spatialdata/indicative-flood-risk-areas-people-sensitivity-grid/wms",
-	    "layer":"Indicative_Flood_Risk_Areas_People_Sensitivity_Grid",
+            "Link": "https://environment.data.gov.uk/spatialdata/surface-water-flood-risk-exposure-grid-people-sensitivity-grid/wms",
+	    "layer":"Surface_Water_Flood_Risk_Exposure_Grid_People_Sensitivity_Grid",
             "Description": "The Indicative Flood Risk Areas are primarily based on an aggregated 1km square grid Updated Flood Map for Surface Water (1 in 100 and 1000 annual probability rainfall), informally referred to as the “blue square map”" 
 	},
         {
             "layerName" : "People Sensitivity by LLFA",
             "Link": "https://environment.data.gov.uk/spatialdata/indicative-flood-risk-areas-people-sensitivity-by-llfa/wms",
-	    "layer":"Indicative_Flood_Risk_Areas_People_Sensitivity_by_Llfa",
+	    "layer":"People_Sensitivity_Map_by_LLFA",
             "Description": "The Indicative Flood Risk Areas are primarily based on an aggregated 1km square grid Updated Flood Map for Surface Water (1 in 100 and 1000 annual probability rainfall), informally referred to as the “blue square map”"
 	},
         {
