@@ -51,7 +51,55 @@
             </div>
 
             <ul class="list-unstyled components" style="font-size: 11px">
-
+                <li>
+                    <a href="#Basemaps" data-toggle="collapse" aria-expanded="true"
+                        class="dropdown-toggle">
+                        <img src="assets/images/Logo-white.png" width="30" alt=""><!-- <i class="fas fa-home"></i> -->
+                        BASEMAPS
+                    </a>
+                    <ul class="list-unstyled collapse show" id="Basemaps" style="">
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="radio"  name='basemap' class="custom-control-input"
+                                        id="satellite-streets-v10" onchange="changebasemaps(this.id)" checked>
+                                    <label class="custom-control-label tooltipps" data-toggle="tooltip"  data-placement="right"  title="satellite map"
+                                        for="satellite-streets-v10">Satellite</label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="radio"  name='basemap' class="custom-control-input"
+                                        id="streets-v11" onchange="changebasemaps(this.id)">
+                                    <label class="custom-control-label tooltipps" data-toggle="tooltip"  data-placement="right"  title="streets map"
+                                        for="streets-v11">Street</label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="radio"  name='basemap' class="custom-control-input"
+                                        id="light-v10" onchange="changebasemaps(this.id)">
+                                    <label class="custom-control-label tooltipps" data-toggle="tooltip"  data-placement="right"  title="light theme map"
+                                        for="light-v10">Light</label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="custom-control custom-switch">
+                                    <input type="radio"  name='basemap' class="custom-control-input"
+                                        id="dark-v10" onchange="changebasemaps(this.id)">
+                                    <label class="custom-control-label tooltipps" data-toggle="tooltip"  data-placement="right"  title="dark theme maps"
+                                        for="dark-v10">Dark</label>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="active">
                     <a href="#flood_risk_rivers_and_sea_for_planning" data-toggle="collapse" aria-expanded="true"
                         class="dropdown-toggle">
@@ -599,6 +647,8 @@
                         <i class="fas fa-align-left"></i>
                         <span style="font-size: 11px">Choose flood map</span>
                     </button>
+                
+                    
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -608,7 +658,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#"><img src="./assets/images/RIDA.gif" style="width: 70px;" alt="" srcset="">></a>
+                                <a class="nav-link" href="#"><img src="./assets/images/RIDA.gif" style="width: 80px;" alt="" srcset="">></a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Page</a>

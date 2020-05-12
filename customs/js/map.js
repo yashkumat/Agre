@@ -25,6 +25,7 @@ var view = new ol.View({
 //Define basemap
 var OSMBaseMap = new ol.layer.Tile({
     source: new ol.source.XYZ({
+        attributions:'Developed by <a  target="_blank" href="http://www.themapsociety.com">TheMapSociety</a>',
       url: 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXJnZXJpdiIsImEiOiJjazludXBxcGowMmc1M2ZuNndweXh6bXl5In0.6NJz4WYp0542hCoBwWHx6g'
     })
   })
@@ -47,7 +48,7 @@ var riverWMS =  new ol.layer.Tile({
 
 
 // Define array of layers
-var layerArray = [OSMBaseMap]
+var layerArray = [OSMBaseMap,riverWMS]
 
 // Define our map
 var map = new ol.Map({
@@ -139,3 +140,10 @@ function layerdisplay(checkbox){
 map.on('click', function(evt){
     $('#sidebar').removeClass('active');
 })
+
+
+
+// change basemaps
+function changebasemaps(type){
+    OSMBaseMap.getSource().setUrl('https://api.mapbox.com/styles/v1/mapbox/'+ type +'/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXJnZXJpdiIsImEiOiJjazludXBxcGowMmc1M2ZuNndweXh6bXl5In0.6NJz4WYp0542hCoBwWHx6g')
+}
